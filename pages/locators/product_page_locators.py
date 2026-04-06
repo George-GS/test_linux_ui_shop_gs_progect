@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 
+
 name_product_loc = (By.TAG_NAME, 'h1')
 price_product_loc = (By.CSS_SELECTOR, '[class="oe_price"]')
 image_product_loc = (By.XPATH, '//img[@alt="Office Design Software"]')

@@ -37,3 +37,10 @@ def cart_modal_window(driver):
 def product_page(driver):
     return ProductPage(driver)
 
+
+@pytest.fixture()
+def cart_with_product(driver, folder_product_desk_page, cart_modal_window, cart_page):
+    folder_product_desk_page.open_page()
+    folder_product_desk_page.add_to_cart_hover()
+    cart_modal_window.go_to_cart()
+    return cart_page

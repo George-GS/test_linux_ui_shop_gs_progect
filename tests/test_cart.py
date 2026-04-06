@@ -2,38 +2,22 @@ import pytest
 import allure
 
 
-
-@allure.title('АААА')
-def test_check_product_in_cart(cart_page, folder_product_desk_page, cart_modal_window):
+@allure.title('Проверка наличия добавленного товара в корзине')
+def test_check_product_in_cart(cart_with_product):
     product_name = 'Customizable Desk'
-    folder_product_desk_page.open_page()
-    folder_product_desk_page.add_to_cart_hover()
-    cart_modal_window.go_to_cart()
-    cart_page.check_product_in_cart(product_name)
+    cart_with_product.check_product_in_cart(product_name)
 
 
-@allure.title('')
+@allure.title('Проверка отображения пустой корзины')
 def test_empty_cart(cart_page):
     cart_page.open_page()
     cart_page.check_cart_header()
     cart_page.check_cart_is_empty()
 
 
-@allure.title('')
-def test_remove_product(folder_product_desk_page, cart_modal_window, cart_page):
+@allure.title('Проверка удаления товара из корзины')
+def test_remove_product(cart_with_product):
     product_name = 'Customizable Desk'
-    folder_product_desk_page.open_page()
-    folder_product_desk_page.add_to_cart_hover()
-    cart_modal_window.go_to_cart()
-    cart_page.check_product_in_cart(product_name)
-    cart_page.remove_product()
-    cart_page.check_cart_is_empty()
-
-
-
-
-
-
-
-
-
+    cart_with_product.check_product_in_cart(product_name)
+    cart_with_product.remove_product()
+    cart_with_product.check_cart_is_empty()
