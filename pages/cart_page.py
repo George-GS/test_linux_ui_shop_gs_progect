@@ -4,14 +4,14 @@ import allure
 from selenium.webdriver.support import expected_conditions as EC
 
 from pages.base_page import BasePage
-from pages.locators import cart_locators as loc
+from pages.locators import cart_page_locators as loc
 
 
 class CartPage(BasePage):
     PAGE_URL = '/cart'
 
     def check_product_in_cart(self, product_name):
-        logging.info('АААА')
+        logging.info('')
         with allure.step('АААА'):
             self.wait.until(EC.text_to_be_present_in_element(loc.product_in_cart, product_name))
             product_in_cart = self.find(loc.product_in_cart)

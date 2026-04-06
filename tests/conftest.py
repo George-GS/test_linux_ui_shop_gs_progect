@@ -7,6 +7,7 @@ from selenium.webdriver.chrome.options import Options
 from pages.folder_product_desk_page import FolderProductDeskPage
 from pages.cart_page import CartPage
 from pages.cart_modal_window import CartModalWindow
+from pages.product_page import ProductPage
 
 
 @pytest.fixture()
@@ -30,4 +31,9 @@ def cart_page(driver):
 @pytest.fixture()
 def cart_modal_window(driver):
     return CartModalWindow(driver)
+
+
+@pytest.fixture()
+def product_page(driver):
+    return ProductPage(driver)
 
