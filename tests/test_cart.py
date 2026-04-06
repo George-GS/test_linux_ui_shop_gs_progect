@@ -4,10 +4,10 @@ import allure
 
 
 @allure.title('АААА')
-def test_check_product_in_cart(cart_page, product_desk_page, cart_modal_window):
+def test_check_product_in_cart(cart_page, folder_product_desk_page, cart_modal_window):
     product_name = 'Customizable Desk'
-    product_desk_page.open_page()
-    product_desk_page.add_to_cart_hover()
+    folder_product_desk_page.open_page()
+    folder_product_desk_page.add_to_cart_hover()
     cart_modal_window.go_to_cart()
     cart_page.check_product_in_cart(product_name)
 
@@ -20,10 +20,10 @@ def test_empty_cart(cart_page):
 
 
 @allure.title('')
-def test_remove_product(product_desk_page, cart_modal_window, cart_page):
+def test_remove_product(folder_product_desk_page, cart_modal_window, cart_page):
     product_name = 'Customizable Desk'
-    product_desk_page.open_page()
-    product_desk_page.add_to_cart_hover()
+    folder_product_desk_page.open_page()
+    folder_product_desk_page.add_to_cart_hover()
     cart_modal_window.go_to_cart()
     cart_page.check_product_in_cart(product_name)
     cart_page.remove_product()
