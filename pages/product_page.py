@@ -8,7 +8,7 @@ from pages.locators import product_page_locators as loc
 
 
 class ProductPage(BasePage):
-    PAGE_URL = '/furn-9999-office-design-software-7?category=9'
+    PAGE_URL = '/customizable-desk-9?category=1#attr=1,3'
 
     def check_name(self, expected_name):
         logging.info(f'Проверяем название товара. Ожидается: "{expected_name}"')
