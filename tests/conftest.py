@@ -1,5 +1,6 @@
 import pytest
 import random
+import allure
 
 from selenium import webdriver
 from selenium.webdriver.chrome.webdriver import WebDriver
@@ -14,11 +15,12 @@ from pages.product_page import ProductPage
 @pytest.fixture()
 def driver():
     options = Options()
-    options.add_argument('start-maximized')
+    options.add_argument('window-size=1920,1080')
     options.add_argument('--headless')
     driver: WebDriver = webdriver.Chrome(options=options)
     yield driver
-    driver.save_screenshot(f'{random.randint(100, 100000)}.png')
+    # driver.save_screenshot(f'{random.randint(100, 100000)}.png')
+    allure.attach(driver.get_screenshot_as_png(), name="Screenshot", attachment_type=AttachmentType.PNG)
 
 
 @pytest.fixture()
