@@ -1,4 +1,5 @@
 import pytest
+import random
 
 from selenium import webdriver
 from selenium.webdriver.chrome.webdriver import WebDriver
@@ -17,6 +18,7 @@ def driver():
     options.add_argument('--headless')
     driver: WebDriver = webdriver.Chrome(options=options)
     yield driver
+    driver.save_screenshot(f'{random.randint(100, 100000)}.png')
 
 
 @pytest.fixture()
