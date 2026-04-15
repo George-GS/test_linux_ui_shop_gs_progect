@@ -14,6 +14,7 @@ from pages.product_page import ProductPage
 def driver():
     options = Options()
     options.add_argument('start-maximized')
+    options.add_argument('--headless')
     driver: WebDriver = webdriver.Chrome(options=options)
     yield driver
 
