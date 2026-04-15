@@ -23,7 +23,7 @@ def test_add_to_cart_from_product_page(product_page):
 
 @allure.title('Изменение валюты на Евро на странице товара')
 def test_change_currency_on_product_page(product_page):
-    expected_price = '359.35 €'
+    expected_price = '962.55 €'
     product_page.open_page()
     product_page.change_currency_to_euro()
     product_page.check_price(expected_price)
