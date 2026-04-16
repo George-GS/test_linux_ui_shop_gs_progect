@@ -1,7 +1,7 @@
 import pytest
 import random
 import allure
-from allure.constants import AttachmentType
+# from allure.constants import AttachmentType
 
 from selenium import webdriver
 from selenium.webdriver.chrome.webdriver import WebDriver
