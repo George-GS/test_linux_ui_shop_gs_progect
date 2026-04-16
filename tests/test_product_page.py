@@ -4,8 +4,8 @@ import allure
 
 @allure.title('Проверка данных товара: название, цена, изображение')
 def test_check_product_data(product_page):
-    product_name = 'Office Design Software'
-    product_price = '$ 280.00'
+    product_name = 'Customizable Desk'
+    product_price = '$ 750.00'
     product_page.open_page()
     product_page.check_name(product_name)
     product_page.check_price(product_price)
@@ -14,7 +14,7 @@ def test_check_product_data(product_page):
 
 @allure.title('Добавление товара в корзину через страницу товара с изменением количества')
 def test_add_to_cart_from_product_page(product_page):
-    count_and_name = '2 x Office Design Software'
+    count_and_name = '2 x Customizable Desk'
     product_page.open_page()
     product_page.add_plus_one()
     product_page.add_to_cart()
