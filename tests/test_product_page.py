@@ -2,7 +2,7 @@ import pytest
 import allure
 
 
-@pytest.mark.smoke
+@pytest.mark.regression
 @allure.title('Проверка данных товара: название, цена, изображение')
 def test_check_product_data(product_page):
     product_name = 'Customizable Desk'
