@@ -22,8 +22,8 @@ def driver():
     options.add_argument('--disable-gpu')
     driver: WebDriver = webdriver.Chrome(options=options)
     yield driver
-    # driver.save_screenshot(f'{random.randint(100, 100000)}.png')
-    allure.attach(driver.get_screenshot_as_png(), name="Screenshot", attachment_type=AttachmentType.PNG)
+    driver.save_screenshot(f'{random.randint(100, 100000)}.png')
+    # allure.attach(driver.get_screenshot_as_png(), name="Screenshot", attachment_type=AttachmentType.PNG)
 
 
 @pytest.fixture()
