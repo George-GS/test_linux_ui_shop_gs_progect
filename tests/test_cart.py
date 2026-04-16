@@ -2,12 +2,14 @@ import pytest
 import allure
 
 
+@pytest.mark.smoke
 @allure.title('Проверка наличия добавленного товара в корзине')
 def test_check_product_in_cart(cart_with_product):
     product_name = 'Customizable Desk'
     cart_with_product.check_product_in_cart(product_name)
 
 
+@pytest.mark.regression
 @allure.title('Проверка отображения пустой корзины')
 def test_empty_cart(cart_page):
     cart_page.open_page()
@@ -15,6 +17,7 @@ def test_empty_cart(cart_page):
     cart_page.check_cart_is_empty()
 
 
+@pytest.mark.regression
 @allure.title('Проверка удаления товара из корзины')
 def test_remove_product(cart_with_product):
     product_name = 'Customizable Desk'

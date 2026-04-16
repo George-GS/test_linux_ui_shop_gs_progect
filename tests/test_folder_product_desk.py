@@ -2,12 +2,14 @@ import pytest
 import allure
 
 
+@pytest.mark.smoke
 @allure.title('Проверка отображения товаров на странице раздела товаров')
 def test_products_displayed_on_page(folder_product_desk_page):
     folder_product_desk_page.open_page()
     folder_product_desk_page.products_displayed_on_page()
 
 
+@pytest.mark.regression
 @allure.title('Поиск существующего товара на странице раздела товаров')
 def test_search_existing_product(folder_product_desk_page):
     product_name = 'Customizable Desk'
@@ -17,6 +19,7 @@ def test_search_existing_product(folder_product_desk_page):
     folder_product_desk_page.verify_product_in_results(product_name)
 
 
+@pytest.mark.regression
 @allure.title('Поиск несуществующего товара на странице раздела товаров')
 def test_search_nonexisten_product(folder_product_desk_page):
     product_name = 'not exist'
@@ -26,6 +29,7 @@ def test_search_nonexisten_product(folder_product_desk_page):
     folder_product_desk_page.check_product_not_exist(product_name)
 
 
+@pytest.mark.regression
 @allure.title('Фильтрация товаров по материалу')
 def test_filter_by_aluminium(folder_product_desk_page):
     product_name = 'Customizable Desk'

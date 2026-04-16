@@ -2,6 +2,7 @@ import pytest
 import allure
 
 
+@pytest.mark.smoke
 @allure.title('Проверка данных товара: название, цена, изображение')
 def test_check_product_data(product_page):
     product_name = 'Customizable Desk'
@@ -12,6 +13,7 @@ def test_check_product_data(product_page):
     product_page.check_image()
 
 
+@pytest.mark.regression
 @allure.title('Добавление товара в корзину через страницу товара с изменением количества')
 def test_add_to_cart_from_product_page(product_page):
     count_and_name = '2 x Customizable Desk'
@@ -21,6 +23,7 @@ def test_add_to_cart_from_product_page(product_page):
     product_page.verify_added_to_cart_notification(count_and_name)
 
 
+@pytest.mark.regression
 @allure.title('Изменение валюты на Евро на странице товара')
 def test_change_currency_on_product_page(product_page):
     expected_price = '962.55 €'
